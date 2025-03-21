@@ -1,5 +1,5 @@
-# MyProjects
-This Repo are containing all projects in Abo_Hadhood Course. Project Bank 
+# MyProjects [ Three Banking Projects ]
+This Repo are containing all projects in Abo_Hadhood Course. 
 
 Got it! Here's a detailed description of the code above in English, focusing on the **Bank** and the enhancements made to it.
 
@@ -11,119 +11,97 @@ This code is a comprehensive banking system written in **C++**. It allows for th
 
 ---
 
-### **Key Features:**
+### **Overview: Three Banking Projects**
 
-1. **Client Management:**
-   - **Display Client List:** Displays the data of all clients stored in the `Clients.txt` file.
-   - **Add New Client:** Adds a new client after ensuring that no account with the same number exists.
-   - **Delete Client:** Deletes a client based on their account number after user confirmation.
-   - **Update Client Data:** Modifies client data such as name, phone number, PIN code, and account balance.
-   - **Find Client:** Searches for a client using their account number and displays their details.
-
-2. **User Management:**
-   - **Display User List:** Displays the data of all users stored in the `Users.txt` file.
-   - **Add New User:** Adds a new user after ensuring that no user with the same username exists.
-   - **Delete User:** Deletes a user based on their username after user confirmation (except for the "Admin" user).
-   - **Update User Data:** Modifies user data such as password and permissions.
-   - **Find User:** Searches for a user using their username and displays their details.
-
-3. **Transaction Management:**
-   - **Deposit:**
-     - Allows users to deposit money into a client's account.
-     - Ensures the account exists before processing the deposit.
-     - Updates the account balance and saves the changes to the file.
-   - **Withdraw:**
-     - Allows users to withdraw money from a client's account.
-     - Checks if the account has sufficient balance before allowing the withdrawal.
-     - If the balance is insufficient, the user is prompted to enter a valid amount.
-     - Updates the account balance and saves the changes to the file.
-   - **Total Balances:**
-     - Displays the total balance of all clients in the system.
-
-4. **Permissions and Access Control:**
-   - The system uses an enumeration (`enMainMenuePermissions`) to define different permissions.
-   - The `CheckAccessPermission` function ensures that users can only perform actions they are authorized to do.
-   - For example, only users with the appropriate permissions can add, delete, or update clients and users.
-
-5. **File Handling:**
-   - The program reads from and writes to two text files: `Clients.txt` and `Users.txt`.
-   - Functions like `LoadCleintsDataFromFile`, `SaveCleintsDataToFile`, `LoadUsersDataFromFile`, and `SaveUsersDataToFile` handle file operations.
-   - This ensures data persistence and consistency across multiple runs of the program.
-
-6. **User-Friendly Interface:**
-   - The program uses a **menu-driven approach** to make it easy for users to navigate and perform actions.
-   - Each menu provides clear options and guides the user through the process.
-
-7. **Error Handling and Validation:**
-   - The program includes checks to ensure that accounts exist before performing transactions.
-   - For withdrawals, it ensures that the account has sufficient balance.
-   - It also validates user input to prevent errors.
+The code represents a series of **three banking projects**, each building upon the previous one with added features and improvements. Below is a breakdown of each project and its key functionalities:
 
 ---
 
-### **How It Works:**
+### **1. First Project: Basic Banking System**
+This is the initial version of the banking system, focusing on **client management**. It includes the following features:
 
-1. **Login Screen:**
-   - The program starts with a login screen where users enter their username and password.
-   - If the credentials are correct, the user is granted access to the main menu based on their permissions.
+- **Client Management:**
+  - Add new clients.
+  - Delete clients.
+  - Update client information.
+  - Find clients by account number.
+  - Display a list of all clients.
 
-2. **Main Menu:**
-   - The main menu provides options for managing clients, performing transactions, managing users, and logging out.
-   - Each option leads to a sub-menu or screen where the user can perform specific actions.
+- **File Handling:**
+  - Clients' data is stored in a file (`Clients.txt`).
+  - The program can load and save client data to the file.
 
-3. **Transactions Menu:**
-   - The transactions menu allows users to deposit, withdraw, or view total balances.
-   - Each transaction is confirmed by the user before being processed.
-
-4. **Data Persistence:**
-   - All changes (e.g., adding, deleting, or updating clients and users) are saved to the respective files (`Clients.txt` and `Users.txt`).
-   - This ensures that data is preserved even after the program is closed.
-
----
-
-### **Example Workflow:**
-
-1. **Login:**
-   - The user logs in with their username and password.
-   - If the credentials are valid, they are taken to the main menu.
-
-2. **Add New Client:**
-   - The user selects the "Add New Client" option from the main menu.
-   - They enter the client's details (account number, PIN code, name, phone, and balance).
-   - The program checks if the account number already exists and saves the new client to the file.
-
-3. **Deposit Money:**
-   - The user selects the "Deposit" option from the transactions menu.
-   - They enter the account number and the amount to deposit.
-   - The program updates the client's balance and saves the changes to the file.
-
-4. **View Total Balances:**
-   - The user selects the "Total Balances" option from the transactions menu.
-   - The program calculates and displays the total balance of all clients.
-
-5. **Log Out:**
-   - The user selects the "Log Out" option from the main menu.
-   - The program returns to the login screen.
+- **Basic Structure:**
+  - The program uses a simple menu-driven interface.
+  - No transaction management or user permissions are included.
 
 ---
 
-### **Enhancements Compared to the Initial Version:**
+### **2. Second Project: Bank2_Transactions**
+This version introduces **transaction management** and enhances the system with the following features:
 
-1. **Transaction Management:**
-   - The ability to deposit and withdraw money was added.
-   - The program ensures that transactions are confirmed and valid before processing them.
+- **Transaction Management:**
+  - **Deposit:** Users can deposit money into a client's account.
+  - **Withdraw:** Users can withdraw money from a client's account, with checks for sufficient balance.
+  - **Total Balances:** Users can view the total balance of all clients in the system.
 
-2. **Permissions System:**
-   - A permissions system was introduced to restrict access to certain features based on user roles.
+- **Improved Client Management:**
+  - The program ensures that accounts exist before performing transactions.
+  - Data validation is added to prevent errors (e.g., invalid account numbers or insufficient balance).
 
-3. **Improved File Handling:**
-   - The program now handles file operations more efficiently, ensuring data integrity and persistence.
+- **File Handling:**
+  - Transactions are saved to the `Clients.txt` file, ensuring data persistence.
 
-4. **User-Friendly Menus:**
-   - The menu-driven interface makes the program easier to use and navigate.
+- **User-Friendly Interface:**
+  - A dedicated **Transactions Menu** is added for easy navigation.
+
+---
+
+### **3. Third Project: Bank3_Extension2**
+This is the most advanced version, introducing **user management** and a **permissions system**. Key features include:
+
+- **User Management:**
+  - Add new users.
+  - Delete users (except the "Admin" user).
+  - Update user information.
+  - Find users by username.
+  - Display a list of all users.
+
+- **Permissions System:**
+  - Users have specific permissions (e.g., list clients, add clients, delete clients, manage transactions, manage users).
+  - The `CheckAccessPermission` function ensures users can only perform actions they are authorized to do.
+
+- **Enhanced Transaction Management:**
+  - Transactions are now tied to user permissions.
+  - Only users with the appropriate permissions can perform deposits, withdrawals, or view total balances.
+
+- **File Handling:**
+  - Users' data is stored in a separate file (`Users.txt`).
+  - The program can load and save user data to the file.
+
+- **Login System:**
+  - Users must log in with a username and password to access the system.
+  - The program checks credentials against the `Users.txt` file.
+
+- **Advanced Menus:**
+  - The main menu includes options for managing clients, transactions, and users.
+  - Each menu is designed to be intuitive and easy to navigate.
+
+---
+
+### **Summary of the Three Projects:**
+
+| **Feature**               | **First Project**       | **Second Project**       | **Third Project**         |
+|---------------------------|-------------------------|--------------------------|---------------------------|
+| **Client Management**      | ✅ Add, Delete, Update, Find, List Clients | ✅ Same as First Project | ✅ Same as Second Project |
+| **Transaction Management** | ❌ Not Available        | ✅ Deposit, Withdraw, Total Balances | ✅ Same as Second Project |
+| **User Management**        | ❌ Not Available        | ❌ Not Available         | ✅ Add, Delete, Update, Find, List Users |
+| **Permissions System**     | ❌ Not Available        | ❌ Not Available         | ✅ User Permissions and Access Control |
+| **File Handling**          | ✅ Clients.txt          | ✅ Clients.txt           | ✅ Clients.txt and Users.txt |
+| **Login System**           | ❌ Not Available        | ❌ Not Available         | ✅ Username and Password Login |
 
 ---
 
 ### **Conclusion:**
 
-This code is a robust and user-friendly banking system that allows for efficient management of clients, users, and financial transactions. The enhancements made in this version, particularly in transaction management and permissions, make it a significant improvement over the initial project. It is a great example of how to build a functional and secure system using C++.
+The code represents a progression from a **basic banking system** to a **fully-featured banking application** with transaction management, user management, and a permissions system. Each project builds on the previous one, adding new functionalities and improving the overall user experience. This modular approach makes the system scalable and easy to extend further.
